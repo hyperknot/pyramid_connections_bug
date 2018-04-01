@@ -1,0 +1,3 @@
+[run]
+source = pyramid_connections_bug
+omit = pyramid_connections_bug/test*
