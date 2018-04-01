@@ -27,7 +27,7 @@ Getting Started
     dropuser pyramid_connections_bug --if-exists
     createuser pyramid_connections_bug --createdb
     createdb -O pyramid_connections_bug -U pyramid_connections_bug pyramid_connections_bug
-
+    
     env/bin/initialize_pyramid_connections_bug_db development.ini
 
 - Run your project's tests.
@@ -39,6 +39,8 @@ Getting Started
     env/bin/pserve development.ini
 
 
+    monitor via **pg_top**
 
+    `pg_top -d pyramid_connections_bug`
 
--
+- ​
