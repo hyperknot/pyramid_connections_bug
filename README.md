@@ -22,3 +22,14 @@ pg_top -d pyramid_connections_bug
 
 
 
+One idle connection
+
+http://localhost:6543/test1
+
+http://localhost:6543/test2
+
+
+
+Another "idle in transaction" connection
+
+http://localhost:6543/test3
