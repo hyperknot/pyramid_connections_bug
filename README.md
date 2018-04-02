@@ -14,7 +14,7 @@ env/bin/initialize_pyramid_connections_bug_db development.ini
 env/bin/pserve development.ini --reload
 ```
 
-monitor via **pg_top**
+monitor via pg_top (or `ps aux`)
 
 ```
 pg_top -d pyramid_connections_bug
