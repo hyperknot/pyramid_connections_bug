@@ -1,27 +1,8 @@
-import os
-
 from pyramid.config import Configurator
 from transaction import TransactionManager
 
 from .views.default import get_siteconfig
-
-
-def debug_dbsession(dbsession):
-    pid = os.getpid()
-
-    dbsession = dbsession
-    connection = dbsession.connection()
-    engine = connection.engine
-    pool = engine.pool
-
-    print('----- DBSession debug -----')
-    print('PID:        {}'.format(pid))
-    print('Engine:     {}'.format(id(engine)))
-    print('Connection: {}'.format(id(connection)))
-    print('DBSession:  {}'.format(id(dbsession)))
-    print('Pool:       {}'.format(id(pool)))
-    print(pool.status())
-    print('---------------------------')
+from .sql import debug_dbsession
 
 
 def main(global_config, **settings):
@@ -36,6 +17,10 @@ def main(global_config, **settings):
     with tm:
         dbsession = config.registry['dbsession_factory']()
         siteconfig = get_siteconfig(dbsession)
+
+
+    # try with and without dispose
+    # dbsession.connection().engine.dispose()
 
     debug_dbsession(dbsession)
 
