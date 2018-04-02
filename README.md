@@ -22,20 +22,5 @@ pg_top -d pyramid_connections_bug
 
 
 
-One idle connection
+Test URL: http://localhost:6543/test
 
-http://localhost:6543/test1
-
-http://localhost:6543/test2
-
-
-
-Another "idle in transaction" connection
-
-http://localhost:6543/test3
-
-
-
-Two connections this time
-
-http://localhost:6543/test2
